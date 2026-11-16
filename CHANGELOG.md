@@ -1,3 +1,8 @@
+## v1.24.2 — Correção dos arquivos visuais para publicação
+- Inclusão dos arquivos assets/logo-agrovia.png e assets/campo-agrovia.jpg no pacote de publicação.
+- Logo transparente otimizada para carregar mais rápido.
+- Mantidos os formulários originais e a autenticação Supabase.
+
 ## v1.24.0 — Boas-vindas cinematográficas
 - Nova tela inicial com fotografia original do campo e logo AgroVia.
 - Entrar e Criar conta abrem o formulário original no modo correspondente.

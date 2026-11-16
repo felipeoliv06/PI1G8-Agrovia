@@ -58,7 +58,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const setupAuthForms = () => {
         let isSignUpMode = false;
         
-        document.getElementById('toggleModeBtn')?.addEventListener('click', (e) => {
+        const modeToggle = document.getElementById('toggleModeBtn');
+        window.agroviaSetSignUpMode = (desired) => { if (isSignUpMode !== desired) modeToggle?.click(); };
+        document.getElementById('landingSignIn')?.addEventListener('click', () => Auth.openLogin(false));
+        document.getElementById('landingSignUp')?.addEventListener('click', () => Auth.openLogin(true));
+        document.getElementById('backToLanding')?.addEventListener('click', () => Auth.showLoginScreen());
+
+        modeToggle?.addEventListener('click', (e) => {
             e.preventDefault();
             isSignUpMode = !isSignUpMode;
             document.getElementById('loginError')?.classList.add('hidden');

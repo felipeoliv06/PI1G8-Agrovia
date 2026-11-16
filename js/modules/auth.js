@@ -117,6 +117,7 @@ export const Auth = {
 
     proceedToDashboard(user) {
         document.getElementById('welcomeScreen').classList.add('hidden');
+        document.getElementById('landingScreen').classList.add('hidden');
         document.getElementById('loginScreen').classList.add('hidden');
         document.getElementById('recoveryScreen').classList.add('hidden');
         document.getElementById('updatePasswordScreen').classList.add('hidden');
@@ -137,7 +138,14 @@ export const Auth = {
         document.getElementById('dashboardApp').classList.add('hidden');
         document.getElementById('recoveryScreen').classList.add('hidden');
         document.getElementById('updatePasswordScreen').classList.add('hidden');
-        document.getElementById('loginScreen').classList.remove('opacity-0', 'pointer-events-none', 'hidden');
+        document.getElementById('loginScreen').classList.add('hidden');
+        document.getElementById('landingScreen').classList.remove('hidden');
+    },
+    openLogin(signUp = false) {
+        document.getElementById('landingScreen').classList.add('hidden');
+        document.getElementById('loginScreen').classList.remove('hidden', 'opacity-0', 'pointer-events-none');
+        window.agroviaSetSignUpMode?.(signUp);
+        document.getElementById('loginEmail')?.focus();
     },
     showResetPasswordScreen() {
         document.getElementById('loginScreen').classList.add('hidden');
@@ -146,6 +154,7 @@ export const Auth = {
     showUpdatePasswordScreen() {
         document.getElementById('welcomeScreen').classList.add('hidden');
         document.getElementById('loginScreen').classList.add('hidden');
+        document.getElementById('landingScreen').classList.add('hidden');
         const updateScreen = document.getElementById('updatePasswordScreen');
         updateScreen.classList.remove('hidden');
         updateScreen.classList.add('active');

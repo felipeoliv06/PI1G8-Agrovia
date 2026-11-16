@@ -1,0 +1,11 @@
+AGROVIA v1.24.2
+
+No GitHub, abra Add file > Upload files. Arraste TODO o conteúdo da pasta agrovia_work (incluindo a pasta assets) para a raiz do repositório e confirme Commit changes. Não envie a pasta agrovia_work como uma pasta adicional.
+
+Confirme que existem na raiz do repositório:
+assets/logo-agrovia.png
+assets/campo-agrovia.jpg
+index.html
+css/style.css
+
+Depois recarregue o site com Ctrl+F5.

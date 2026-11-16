@@ -85,3 +85,29 @@ textarea.commercial-input{min-height:80px}
   #dashboardApp .view-section :is(input,select,textarea) { font-size: 16px; }
 }
 @media (prefers-reduced-motion: reduce) { #mainContent .view-section { animation: none; } #mainContent { scroll-behavior: auto; } }
+
+
+/* v1.24 — Experiência de entrada (sem alterações no dashboard) */
+.agrovia-landing { position:fixed; inset:0; z-index:40; display:flex; align-items:center; justify-content:center; overflow:auto; padding:2rem 1.2rem; isolation:isolate; text-align:center; }
+.agrovia-landing.hidden { display:none; }
+.agrovia-scene { position:absolute; inset:0; z-index:-2; background:linear-gradient(180deg,rgba(1,18,13,.38),rgba(1,15,12,.73)),url('../assets/campo-agrovia.jpg') center/cover no-repeat; }
+.agrovia-landing::after { content:''; position:absolute; inset:0; z-index:-1; background:radial-gradient(ellipse at 50% 40%,transparent 10%,rgba(0,15,12,.35) 100%); pointer-events:none; }
+.agrovia-landing-content { width:min(100%,680px); display:flex; flex-direction:column; align-items:center; gap:1.15rem; animation:agrovia-reveal .65s ease both; }
+.agrovia-landing-logo { width:min(90vw,440px); height:auto; max-height:320px; object-fit:contain; filter:drop-shadow(0 6px 22px rgba(0,0,0,.5)); }
+.agrovia-landing h1 { color:#fff; font-weight:800; font-size:clamp(1.8rem,4vw,3.1rem); line-height:1.15; text-shadow:0 3px 20px rgba(0,0,0,.5); }
+.agrovia-landing p { color:#e0f2e9; font-size:clamp(.98rem,2vw,1.16rem); }
+.agrovia-landing-actions { display:flex; gap:1rem; justify-content:center; flex-wrap:wrap; margin-top:.9rem; width:100%; }
+.agrovia-primary,.agrovia-secondary { min-width:170px; padding:.95rem 1.7rem; border-radius:12px; font-weight:750; transition:transform .2s,background .2s; }
+.agrovia-primary { color:#042016; background:#34d399; box-shadow:0 8px 30px #0005; }
+.agrovia-secondary { color:white; border:1px solid #ffffff90; background:#071b17a8; backdrop-filter:blur(10px); }
+.agrovia-primary:hover,.agrovia-secondary:hover { transform:translateY(-2px); }
+.agrovia-primary:focus-visible,.agrovia-secondary:focus-visible,.agrovia-back:focus-visible { outline:3px solid #6ee7b7; outline-offset:3px; }
+.agrovia-landing-footer { position:absolute; bottom:1.3rem; left:1rem; right:1rem; font-size:.78rem; color:#d1fae5b8; }
+#loginScreen,#recoveryScreen,#updatePasswordScreen { background:linear-gradient(rgba(1,15,12,.63),rgba(1,15,12,.75)),url('../assets/campo-agrovia.jpg') center/cover no-repeat; isolation:isolate; }
+#loginScreen::before,#recoveryScreen::before,#updatePasswordScreen::before { content:''; position:fixed; inset:-20px; z-index:-1; background:inherit; filter:blur(7px); pointer-events:none; }
+#loginScreen > div,#recoveryScreen > div,#updatePasswordScreen > div { background:rgba(10,22,25,.88); border-color:rgba(167,243,208,.18); box-shadow:0 24px 80px #0009; }
+.agrovia-back { display:inline-flex; gap:.45rem; align-items:center; color:#a7f3d0; font-size:.85rem; margin-bottom:1rem; padding:.35rem; border-radius:6px; }
+.agrovia-back:hover { color:white; }
+@keyframes agrovia-reveal { from { opacity:0; transform:translateY(12px) } to { opacity:1; transform:translateY(0) } }
+@media(max-width:520px) { .agrovia-landing-actions { flex-direction:column; max-width:300px; } .agrovia-primary,.agrovia-secondary { width:100%; } .agrovia-landing-logo { width:min(88vw,340px); max-height:250px; } }
+@media(prefers-reduced-motion:reduce) { .agrovia-landing-content { animation:none; } .agrovia-primary,.agrovia-secondary { transition:none; } }
