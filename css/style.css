@@ -1,0 +1,87 @@
+/* Custom Properties & Reset */
+:root {
+  --scrollbar-bg: #020617;
+  --scrollbar-thumb: #1e293b;
+  --scrollbar-thumb-hover: #334155;
+}
+.custom-scrollbar::-webkit-scrollbar { width: 6px; height: 6px; }
+.custom-scrollbar::-webkit-scrollbar-track { background: var(--scrollbar-bg); }
+.custom-scrollbar::-webkit-scrollbar-thumb { background: var(--scrollbar-thumb); border-radius: 4px; }
+.custom-scrollbar::-webkit-scrollbar-thumb:hover { background: var(--scrollbar-thumb-hover); }
+
+.animate-fade-in { animation: fadeIn 0.4s ease-out forwards; }
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+button:focus-visible, input:focus-visible { outline: 2px solid #10b981; outline-offset: 2px; }
+/* Gestão Comercial interna */
+.commercial-input {width:100%;min-width:0;padding:10px 12px;background:#020617;border:1px solid #334155;border-radius:10px;color:#e2e8f0;font-size:13px}
+.commercial-label {display:block;margin-bottom:6px;color:#94a3b8;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.04em}
+.commercial-input:focus {outline:2px solid #10b981;outline-offset:1px}
+
+/* Gestão Comercial: campos compartilhados entre produtos, clientes, pedidos e entregas. */
+.commercial-input { width:100%; min-width:0; padding:10px 12px; background:#020617; border:1px solid #334155; border-radius:10px; color:#e2e8f0; font-size:13px; }
+.commercial-label { display:block; margin-bottom:6px; color:#94a3b8; font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:.04em; }
+.commercial-input:focus { outline:2px solid #10b981; outline-offset:1px; }
+
+/* v1.17: refinamentos de usabilidade sem mudar a paleta original. */
+.agrovia-location-bar {display:flex;align-items:center;gap:.6rem;font-size:.8rem;flex-wrap:wrap}
+.nav-btn {min-height:44px}
+.nav-btn[aria-current="page"] {box-shadow:inset 3px 0 0 #10b981}
+button, a, input, select, textarea {scroll-margin-top:1rem}
+:where(button,a,input,select,textarea):focus-visible {outline:2px solid #34d399;outline-offset:3px}
+:where(input,select,textarea) {max-width:100%}
+@media(max-width:640px){
+  .agrovia-toast {left:1rem!important;right:1rem!important;bottom:1rem!important}
+  .view-section {min-width:0}
+  .view-section .overflow-x-auto {overscroll-behavior-x:contain}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after {animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
+}
+
+/* v1.18: orientações de cadastro e estados acessíveis, preservando o tema original. */
+.agrovia-form-guide{display:flex;align-items:flex-start;gap:.65rem;padding:.8rem .9rem;margin-bottom:1rem;border:1px solid rgba(16,185,129,.25);border-radius:.75rem;background:rgba(16,185,129,.07);color:#a7f3d0;font-size:.8rem;line-height:1.5}
+.agrovia-form-guide i{margin-top:.15rem;flex-shrink:0}
+.agrovia-form-feedback:not([hidden]){display:block;margin:.6rem 0;padding:.65rem .8rem;border:1px solid rgba(251,113,133,.35);border-radius:.65rem;background:rgba(251,113,133,.08);color:#fda4af;font-size:.8rem}
+.commercial-input[aria-invalid="true"]{border-color:#fb7185;outline-color:#fb7185}
+.commercial-input{min-height:44px;font-size:14px}
+textarea.commercial-input{min-height:80px}
+#commercialContent button{min-height:40px}
+#commercialContent button:disabled{opacity:.55;cursor:wait}
+@media(max-width:640px){#commercialContent section{padding:1rem}#commercialContent .grid-cols-2{gap:.65rem}}
+
+/* Guia de primeiro acesso — preserva a identidade original. */
+.agrovia-tour-highlight { position: relative; z-index: 75; outline: 3px solid #10b981; outline-offset: 4px; border-radius: 12px; }
+@media (max-width: 1023px) { .agrovia-tour-highlight { z-index: auto; } }
+@media (prefers-reduced-motion: reduce) { #tourProgress { transition: none; } }
+
+
+/* v1.23: acabamento visual discreto, preservando a identidade escura e esmeralda. */
+:root { color-scheme: dark; }
+#mainContent { scroll-behavior: smooth; }
+#mainContent > header { gap: 1rem; }
+#mainContent .view-section { animation: agrovia-section-in .22s ease-out both; }
+@keyframes agrovia-section-in { from { opacity: .72; transform: translateY(4px); } to { opacity: 1; transform: translateY(0); } }
+#dashboardApp .nav-btn { border: 1px solid transparent; }
+#dashboardApp .nav-btn:hover { border-color: rgba(148,163,184,.13); }
+#dashboardApp .nav-btn[aria-current="page"] { border-color: rgba(16,185,129,.25); background: rgba(16,185,129,.1); }
+#dashboardApp button:not(:disabled), #dashboardApp a { -webkit-tap-highlight-color: transparent; }
+#dashboardApp button { transition: background-color .18s ease, border-color .18s ease, box-shadow .18s ease, color .18s ease; }
+#dashboardApp input, #dashboardApp select, #dashboardApp textarea { transition: border-color .18s ease, box-shadow .18s ease; }
+#dashboardApp :is(input,select,textarea):focus-visible { border-color: #34d399; box-shadow: 0 0 0 3px rgba(16,185,129,.13); outline: none; }
+#dashboardApp :is(input,textarea)::placeholder { color: #64748b; opacity: 1; }
+#dashboardApp :is(input,select,textarea):disabled { opacity: .65; cursor: not-allowed; }
+#dashboardApp .commercial-input { background: #0b1221; border-color: #334155; }
+#dashboardApp .commercial-label { color: #cbd5e1; letter-spacing: .025em; }
+#dashboardApp :is(table) { border-collapse: separate; border-spacing: 0; }
+#dashboardApp table tbody tr { transition: background-color .15s ease; }
+#dashboardApp table tbody tr:hover { background-color: rgba(148,163,184,.055); }
+#dashboardApp .overflow-x-auto { scrollbar-width: thin; scrollbar-color: #334155 transparent; }
+@media (max-width: 640px) {
+  #mainContent { padding: 1rem; }
+  #mainContent > header { margin-bottom: 1.25rem; padding-bottom: .85rem; }
+  #dashboardApp .view-section :is(input,select,textarea) { font-size: 16px; }
+}
+@media (prefers-reduced-motion: reduce) { #mainContent .view-section { animation: none; } #mainContent { scroll-behavior: auto; } }

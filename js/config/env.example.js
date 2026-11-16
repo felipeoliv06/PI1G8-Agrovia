@@ -1,0 +1,4 @@
+export const ENV = {
+    SUPABASE_URL: "COLE_SUA_URL_AQUI",
+    SUPABASE_ANON_KEY: "COLE_SUA_ANON_KEY_AQUI"
+};

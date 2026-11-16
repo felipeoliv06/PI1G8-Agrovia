@@ -1,0 +1,11 @@
+{
+  "name": "agrovia-saas",
+  "version": "1.14.0",
+  "private": true,
+  "description": "Gestão rural e comercial interna com pedidos transacionais",
+  "scripts": {
+    "test": "node --test tests/*.test.js",
+    "check:js": "node --check js/main.js && node --check js/modules/dashboard.js && node --check js/modules/auth.js && node --check js/modules/properties.js && node --check js/modules/ui.js && node --check js/modules/agricultural.js && node --check js/modules/finance.js && node --check js/modules/profile.js && node --check js/modules/commercial.js && node --check js/config/supabase.js && node --check js/config/env.js",
+    "check": "npm test && npm run check:js"
+  }
+}

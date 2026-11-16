@@ -1,0 +1,4 @@
+-- Instalado no Supabase em 16/11/2026.
+-- O histórico é registrado automaticamente por triggers em public.products.
+-- Para novas instalações, aplicar a migration agrovia_stock_movement_history_v114 no Supabase.
+-- As alterações anteriores à implantação não podem ser reconstruídas automaticamente.
