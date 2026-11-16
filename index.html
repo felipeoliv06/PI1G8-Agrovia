@@ -20,9 +20,25 @@
      </div>
   </div>
 
+  <!-- BOAS-VINDAS: exibida somente para visitantes sem sessão -->
+  <section id="landingScreen" class="agrovia-landing hidden" aria-labelledby="landingTitle">
+    <div class="agrovia-scene" aria-hidden="true"></div>
+    <div class="agrovia-landing-content">
+      <img src="assets/logo-agrovia.png" alt="AgroVia" class="agrovia-landing-logo" />
+      <h1 id="landingTitle">Sua produção, seu controle, seu futuro.</h1>
+      <p>Uma maneira mais simples de organizar sua gestão agrícola.</p>
+      <div class="agrovia-landing-actions">
+        <button id="landingSignIn" type="button" class="agrovia-primary">Entrar</button>
+        <button id="landingSignUp" type="button" class="agrovia-secondary">Criar conta</button>
+      </div>
+    </div>
+    <span class="agrovia-landing-footer">AgroVia · Gestão agrícola integrada</span>
+  </section>
+
   <!-- TELA DE AUTENTICAÇÃO -->
   <div id="loginScreen" role="dialog" aria-labelledby="formTitle" class="fixed inset-0 z-40 flex items-center justify-center bg-slate-950 px-4 py-6 transition-all duration-500 opacity-100 hidden overflow-y-auto">
     <div class="w-full max-w-md bg-slate-900/90 backdrop-blur-xl p-6 sm:p-8 rounded-3xl border border-slate-800 shadow-2xl relative my-auto">
+      <button type="button" id="backToLanding" class="agrovia-back" aria-label="Voltar às boas-vindas"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Voltar</button>
       <div class="text-center mb-8">
         <div class="inline-flex items-center justify-center w-12 h-12 bg-emerald-500/10 border border-emerald-500/20 rounded-2xl mb-4 text-emerald-400 text-xl shadow-inner">
           <i class="fa-solid fa-seedling" aria-hidden="true"></i>

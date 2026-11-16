@@ -1,3 +1,9 @@
+## v1.24.0 — Boas-vindas cinematográficas
+- Nova tela inicial com fotografia original do campo e logo AgroVia.
+- Entrar e Criar conta abrem o formulário original no modo correspondente.
+- Fundo desfocado nas telas de autenticação; dashboard e Supabase preservados.
+- Layout responsivo e suporte a movimento reduzido.
+
 ## v1.23.0 — Refinamento visual
 - Melhoria de foco, legibilidade e espaçamento, mantendo as cores originais.
 - Realce discreto da navegação, campos e linhas de tabelas.
